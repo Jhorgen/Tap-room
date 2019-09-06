@@ -2,6 +2,29 @@ import React, {Component} from 'react';
 import { Button, Collapse } from 'react-bootstrap'
 import PropTypes from "prop-types";
 
+var myButton = {
+  backgroundColor: '#4a4a4a',
+  color: 'white',
+  width: '70%',
+  height: '50px',
+  border: 'none',
+  marginBottom: '10px',
+  fontSize: '25px',
+  textAlign: 'left'
+}
+
+var myAnswer = {
+  backgroundColor: '#4a4a4a',
+  color: 'white',
+  width: '70%',
+  fontSize: '25px',
+  marginLeft: 'auto',
+  marginRight: 'auto',
+  textAlign: 'left',
+  marginBottom: '15px',
+  padding: '10px'
+}
+
 export default class Keg extends Component {
   constructor(props) {
     super(props)
@@ -17,29 +40,34 @@ export default class Keg extends Component {
     })
   }
 
-render() {
-  return(
-    <div>
-    <button>
-    onClick={() => this.handleClick()}
-    >
-    {this.props.question}
-    </button>
-    { this.state.clicked &&
 
-      <div id="example-collapse-text">
-      {this.props.answer}
+  render() {
+    return(
+      <div>
+        <button style={myButton}
+          onClick={() => this.handleClick()}
+          >
+          {this.props.name}
+        </button>
+        { this.state.clicked &&
+
+          <div style={myAnswer} id="example-collapse-text">
+            {this.props.brand}
+            {this.props.price}
+            {this.props.abv}
+          </div>
+
+
+        }
       </div>
-
-
+    );
+    Keg.propTypes = {
+      name: PropTypes.string,
+      brand: PropTypes.string,
+      price: PropTypes.number,
+      abv: PropTypes.number
     }
-    </div>
-  );
-  Keg.propTypes = {
-    question: PropTypes.string.isRequired,
-    answer: PropTypes.string.isRequired
   }
-}
 
 
 }
