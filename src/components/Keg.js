@@ -50,7 +50,6 @@ export default class Keg extends Component {
           {this.props.name}
         </button>
         { this.state.clicked &&
-
           <div style={myAnswer} id="example-collapse-text">
             {this.props.brand}
             {this.props.price}
@@ -62,10 +61,10 @@ export default class Keg extends Component {
       </div>
     );
     Keg.propTypes = {
-      name: PropTypes.string,
-      brand: PropTypes.string,
-      price: PropTypes.number,
-      abv: PropTypes.number
+      name: PropTypes.string.isRequired,
+      brand: PropTypes.string.isRequired,
+      price: PropTypes.number.isRequired,
+      abv: PropTypes.number.isRequired
     }
   }
 

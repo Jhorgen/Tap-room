@@ -48,11 +48,11 @@ var masterKegList = [
 function KegList() {
   return (
   <div>
-    {masterKegList.map((keg, index) =>
-      <KegList name={keg.name}
-        brand={keg.brand}
-        price={keg.price}
-        abv={keg.abv}
+    {masterKegList.map((kegs, index) =>
+      <KegList name={kegs.name}
+        brand={kegs.brand}
+        price={kegs.price}
+        abv={kegs.abv}
         key={index}/>
     )}
   </div>

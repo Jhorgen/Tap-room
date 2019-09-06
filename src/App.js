@@ -1,7 +1,7 @@
 import React from 'react';
 import './App.css';
 import UserNav from './components/UserNav'
-import KegList from './components/KegList'
+import KegListMain from './components/KegListMain'
 
 
 function App() {
@@ -12,7 +12,7 @@ function App() {
 
      <UserNav/>
 
-     <KegList/>
+     <KegListMain/>
 
 
 
