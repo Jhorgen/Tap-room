@@ -1,6 +1,7 @@
 import React, {Component} from 'react';
 import { Button, Collapse } from 'react-bootstrap'
 import PropTypes from "prop-types";
+import Coors from './CoorsLogo';
 
 var myButton = {
   backgroundColor: '#4a4a4a',
@@ -13,16 +14,18 @@ var myButton = {
   textAlign: 'left'
 }
 
-var myAnswer = {
+var myInfo = {
   backgroundColor: '#4a4a4a',
   color: 'white',
   width: '70%',
   fontSize: '25px',
-  marginLeft: 'auto',
-  marginRight: 'auto',
   textAlign: 'left',
   marginBottom: '15px',
   padding: '10px'
+}
+
+var coorsStyle = {
+  float: 'right'
 }
 
 export default class Keg extends Component {
@@ -50,10 +53,15 @@ export default class Keg extends Component {
           {this.props.name}
         </button>
         { this.state.clicked &&
-          <div style={myAnswer} id="example-collapse-text">
-            {this.props.brand}
-            {this.props.price}
-            {this.props.abv}
+          <div style={myInfo} id="example-collapse-text">
+            <ul>
+            <li>{this.props.brand}</li>
+            <li>{this.props.price}</li>
+            <li>{this.props.abv}</li>
+            <br></br>
+            <h4>{this.props.remainder}</h4>
+          </ul>
+            <div style={coorsStyle}><Coors/></div>
           </div>
 
 
@@ -64,7 +72,8 @@ export default class Keg extends Component {
       name: PropTypes.string.isRequired,
       brand: PropTypes.string.isRequired,
       price: PropTypes.number.isRequired,
-      abv: PropTypes.number.isRequired
+      abv: PropTypes.number.isRequired,
+      remainder: PropTypes.number.isRequired
     }
   }
 
