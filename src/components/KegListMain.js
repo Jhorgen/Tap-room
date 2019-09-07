@@ -4,7 +4,8 @@ import KegList from './KegList'
 function KegListMain () {
   var textStyle = {
     marginTop: '85px',
-    marginBottom: '48px'
+    marginBottom: '48px',
+
   }
 
   var buttonStyle = {

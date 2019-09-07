@@ -12,7 +12,8 @@ var myButton = {
   marginBottom: '10px',
   fontSize: '25px',
   textAlign: 'center',
-  borderRadius: '15px'
+  borderRadius: '15px',
+
 }
 
 var myInfo = {
@@ -20,12 +21,12 @@ var myInfo = {
   color: 'white',
   width: '34%',
   fontSize: '25px',
-  marginLeft: 'auto',
-  marginRight: 'auto',
+
   textAlign: 'left',
   marginBottom: '15px',
   padding: '10px',
-  borderRadius: '15px'
+  borderRadius: '15px',
+
 }
 
 var coorsStyle = {

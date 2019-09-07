@@ -3,6 +3,7 @@ import './App.css';
 import UserNav from './components/UserNav'
 import KegListMain from './components/KegListMain'
 import { Container, Row, Col } from 'react-bootstrap'
+import BeerBackground1 from './components/BeerBackgroundImg'
 
 
 
@@ -11,14 +12,15 @@ function App() {
     <div className="App">
 
       <UserNav/>
-  <Row>
-    <Col md={2}>
-    <KegListMain/>
-    </Col>
-  </Row>
+      <Container>
+        <BeerBackground1/>
+      </Container>
 
+  <Container>
+      <KegListMain/>
+    </Container>
 
-</div>
+  </div>
 
   );
 }
