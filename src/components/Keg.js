@@ -6,27 +6,33 @@ import Coors from './CoorsLogo';
 var myButton = {
   backgroundColor: '#4a4a4a',
   color: 'white',
-  width: '70%',
-  height: '50px',
+  width: '35%',
+  height: '60px',
   border: 'none',
   marginBottom: '10px',
   fontSize: '25px',
-  textAlign: 'left'
+  textAlign: 'center',
+  borderRadius: '15px'
 }
 
 var myInfo = {
   backgroundColor: '#4a4a4a',
   color: 'white',
-  width: '70%',
+  width: '34%',
   fontSize: '25px',
+  marginLeft: 'auto',
+  marginRight: 'auto',
   textAlign: 'left',
   marginBottom: '15px',
-  padding: '10px'
+  padding: '10px',
+  borderRadius: '15px'
 }
 
 var coorsStyle = {
   float: 'right'
 }
+
+
 
 export default class Keg extends Component {
   constructor(props) {
@@ -54,6 +60,7 @@ export default class Keg extends Component {
         </button>
         { this.state.clicked &&
           <div style={myInfo} id="example-collapse-text">
+            <div style={coorsStyle}><Coors/></div>
             <ul>
             <li>{this.props.brand}</li>
             <li>{this.props.price}</li>
@@ -61,7 +68,6 @@ export default class Keg extends Component {
             <br></br>
             <h4>{this.props.remainder}</h4>
           </ul>
-            <div style={coorsStyle}><Coors/></div>
           </div>
 
 

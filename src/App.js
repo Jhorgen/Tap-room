@@ -2,7 +2,7 @@ import React from 'react';
 import './App.css';
 import UserNav from './components/UserNav'
 import KegListMain from './components/KegListMain'
-import { Container } from 'react-bootstrap'
+import { Container, Row, Col } from 'react-bootstrap'
 
 
 
@@ -11,8 +11,11 @@ function App() {
     <div className="App">
 
       <UserNav/>
-  
+  <Row>
+    <Col md={2}>
     <KegListMain/>
+    </Col>
+  </Row>
 
 
 </div>
