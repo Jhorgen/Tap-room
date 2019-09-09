@@ -2,6 +2,7 @@ import React, {Component} from 'react';
 import { Button, Collapse } from 'react-bootstrap'
 import PropTypes from "prop-types";
 import Coors from './CoorsLogo';
+import EditKeg from './EditKegForm.js'
 
 var myButton = {
   backgroundColor: '#4a4a4a',
@@ -12,7 +13,7 @@ var myButton = {
   marginBottom: '10px',
   fontSize: '25px',
   textAlign: 'center',
-  borderRadius: '15px',
+  borderRadius: '15px'
 
 }
 
@@ -21,7 +22,9 @@ var myInfo = {
   color: 'white',
   width: '34%',
   fontSize: '25px',
+  display: 'inherit',
 
+  marginLeft: '337px',
   textAlign: 'left',
   marginBottom: '15px',
   padding: '10px',
@@ -68,6 +71,7 @@ export default class Keg extends Component {
             <li>{this.props.abv}</li>
             <br></br>
             <h4>{this.props.remainder}</h4>
+            <div><EditKeg/></div>
           </ul>
           </div>
 
