@@ -1,13 +1,17 @@
 import React from 'react';
 
-function NewKeg(){
+var myStyle = {
+  float:'left'
+}
+
+function NewKegForm(){
 
   return (
 <div>
-<h1>test</h1>
+<h1 style={myStyle}>test</h1>
 </div>
 
   );
 }
 
-export default NewKeg;
+export default NewKegForm;

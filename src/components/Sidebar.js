@@ -1,4 +1,5 @@
 import React, {Component} from 'react';
+import NewKeg from './NewKegMain'
 
 var sidebarStyle = {
   float: 'left',
@@ -19,10 +20,10 @@ export default class Sidebar extends Component {
         const { showing } = this.state;
         return (
             <div>
-                <button style={sidebarStyle} onClick={() => this.setState({ showing: !showing })}>Add a Keg</button>
+                <button style={sidebarStyle} onClick={() => this.setState({ showing: !showing })}><NewKeg/></button>
                 { showing
 
-                    ? <div style={sidebarText}>This is visible</div>
+                    ? <div style={sidebarText}>Add keg form</div>
                     : null
                 }
             </div>
