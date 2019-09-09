@@ -8,7 +8,7 @@ function NewKegForm(){
 
   return (
 <div>
-<h1 style={myStyle}>test</h1>
+<h1 style={myStyle}></h1>
 </div>
 
   );

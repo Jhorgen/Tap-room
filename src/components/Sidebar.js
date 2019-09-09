@@ -20,7 +20,7 @@ export default class Sidebar extends Component {
         const { showing } = this.state;
         return (
             <div>
-                <button style={sidebarStyle} onClick={() => this.setState({ showing: !showing })}><NewKeg/></button>
+                <button style={sidebarStyle} onClick={() => this.setState({ showing: !showing })}><NewKeg/>Add a Keg</button>
                 { showing
 
                     ? <div style={sidebarText}>Add keg form</div>
