@@ -16,7 +16,7 @@ function KegListMain () {
     <div>
     <div style={textStyle}>
     </div>
-    <KegList/>
+   <KegList/>
     <div style={buttonStyle}>
     </div>
     </div>
