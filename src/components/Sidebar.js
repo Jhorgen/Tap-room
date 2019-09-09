@@ -9,7 +9,8 @@ var sidebarStyle = {
 }
 
 var sidebarText = {
-  float: 'left'
+  float: 'left',
+  marginBottom: '20px'
 }
 
 export default class Sidebar extends Component {
@@ -23,8 +24,8 @@ export default class Sidebar extends Component {
                 <div style={sidebarStyle} onClick={() => this.setState({ showing: !showing })}><NewKeg/></div>
                 { showing
 
-                    ? <div style={sidebarText}>Add keg form</div>
-                    : null
+                    ? <div style={sidebarText}></div>
+                    : <h1 style={sidebarText}>Pretend input form</h1>
                 }
             </div>
         )
