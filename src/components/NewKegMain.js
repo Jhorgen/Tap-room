@@ -17,6 +17,7 @@ const Routes = () => {
   return (
     <div>
       <Link to="/New">
+        <button style={myStyle}>Add a Keg</button>
       </Link>
 
     </div>
