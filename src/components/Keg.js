@@ -63,7 +63,6 @@ export default class Keg extends Component {
         </button>
         { this.state.clicked &&
           <div style={myInfo} id="example-collapse-text">
-            <div style={coorsStyle}><Coors/></div>
             <ul>
             <li>{this.props.brand}</li>
             <li>{this.props.price}</li>

@@ -1,5 +1,6 @@
 import React from 'react';
 import Keg from './Keg';
+import Coors from './CoorsLogo';
 
 var masterKegList = [
 
@@ -8,7 +9,9 @@ var masterKegList = [
     brand: 'Brand: Coors',
     price: 'Price: $5',
     abv: 'ABV: 5%',
-    remainder: 'Remainder: placeholder'
+    remainder: 'Remainder: placeholder',
+    <Coors/>
+
   },
 
   {
