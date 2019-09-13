@@ -1,11 +1,14 @@
 import React, {Component} from 'react';
-import NewKeg from './NewKegMain'
+import NewKeg from './NewKeg'
+import NewKegForm from './NewKegForm';
+
 
 var sidebarStyle = {
   float: 'left',
   borderRadius: '10px',
   backgroundColor: 'coral',
-  boxShadow: '15px'
+  boxShadow: '15px',
+  display: 'flex'
 }
 
 var sidebarText = {
@@ -21,11 +24,11 @@ export default class Sidebar extends Component {
         const { showing } = this.state;
         return (
             <div>
-                <div style={sidebarStyle} onClick={() => this.setState({ showing: !showing })}><NewKeg/></div>
+                <div style={sidebarStyle} onClick={() => this.setState({ showing: !showing })}><button>Add Keg</button></div>
                 { showing
 
                     ? <div style={sidebarText}></div>
-                    : <h1 style={sidebarText}>Pretend input form</h1>
+                    : <NewKegForm/>
                 }
             </div>
         )

@@ -7,30 +7,17 @@ var myStyle = {
   backgroundColor: 'coral'
 }
 
-const New = () => (
-  <div>
-    New
-  </div>
-)
-
-const Routes = () => {
-  return (
-    <div>
-      <Link to="/New">
-        <button style={myStyle}>Add a Keg</button>
-      </Link>
-
-    </div>
-  );
-};
-
 function NewKeg(){
 
   return (
     <Router>
 <div>
-<Routes/>
+
 <Route exact path="/NewKeg" component={NewKegForm} />
+<Link to="/NewKeg">
+<button>Search tweets</button>
+</Link>
+
 </div>
 </Router>
   );
