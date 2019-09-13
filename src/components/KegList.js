@@ -2,6 +2,8 @@ import React from 'react';
 import Keg from './Keg';
 import Coors from './CoorsLogo';
 import PropTypes from "prop-types";
+import { BrowserRouter, Switch, Route, Link } from 'react-router-dom';
+
 
 
 var masterKegList = [
@@ -67,6 +69,7 @@ render() {
 
   return (
     <div>
+      <Link to='/newKeg'>Add New Keg</Link>
       {masterKegList.map((kegs, index) =>
         <Keg
           img={kegs.img}

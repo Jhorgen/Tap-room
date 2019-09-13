@@ -2,6 +2,8 @@ import React from 'react';
 import { Nav, Navbar } from 'react-bootstrap'
 import SiteLogo from './NavLogo';
 import NavBarSelection from './NavBarSelection'
+import { BrowserRouter, Switch, Route, Link } from 'react-router-dom';
+
 
 function UserNav(){
 
@@ -16,6 +18,7 @@ function UserNav(){
       <Navbar.Collapse id="basic-navbar-nav">
         <Nav className="mr-auto">
         <NavBarSelection/>
+        <Link to='keglist'>here</Link>
         </Nav>
       </Navbar.Collapse>
     </Navbar>
