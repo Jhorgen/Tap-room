@@ -69,7 +69,8 @@ render() {
 
   return (
     <div>
-      <Link to='/newKeg'>Add New Keg</Link>
+      <Link to='/newkeg'>Add New Keg</Link>
+        <Link to='/'>Go back</Link>
       {masterKegList.map((kegs, index) =>
         <Keg
           img={kegs.img}
@@ -85,4 +86,8 @@ render() {
   );
 }
 }
+KegList.propTypes = {
+  remainder: PropTypes.number.isRequired
+}
+
 export default KegList

@@ -18,7 +18,11 @@ function UserNav(){
       <Navbar.Collapse id="basic-navbar-nav">
         <Nav className="mr-auto">
         <NavBarSelection/>
-        <Link to='keglist'>here</Link>
+        <Link to='keglist'>Keg list</Link>
+        <Link to='about'>About us</Link>
+        <Link to='contact'>Contact</Link>
+
+
         </Nav>
       </Navbar.Collapse>
     </Navbar>
