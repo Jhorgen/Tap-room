@@ -16,7 +16,6 @@ var myButton = {
   borderRadius: '15px'
 
 }
-
 var myInfo = {
   backgroundColor: '#4a4a4a',
   color: 'white',
