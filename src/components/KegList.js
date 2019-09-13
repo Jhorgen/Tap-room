@@ -5,12 +5,12 @@ import Coors from './CoorsLogo';
 var masterKegList = [
 
   {
-    name: 'Coors Light',
+    name: 'test Light',
     brand: 'Brand: Coors',
     price: 'Price: $5',
     abv: 'ABV: 5%',
     remainder: 'Remainder: placeholder',
-    <Coors/>
+    img: <Coors/>
 
   },
 
@@ -61,12 +61,15 @@ function KegList() {
   return (
     <div>
       {masterKegList.map((kegs, index) =>
-        <Keg name={kegs.name}
+        <Keg
+          img={kegs.img}
+          name={kegs.name}
           brand={kegs.brand}
           price={kegs.price}
           abv={kegs.abv}
           remainder={kegs.remainder}
-          key={index}/>
+          key={index}
+          />
       )}
     </div>
   );

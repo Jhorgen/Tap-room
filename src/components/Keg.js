@@ -31,10 +31,9 @@ var myInfo = {
 
 }
 
-var coorsStyle = {
-  float: 'right'
+var imgStyle= {
+float: 'right'
 }
-
 
 
 export default class Keg extends Component {
@@ -63,28 +62,25 @@ export default class Keg extends Component {
         </button>
         { this.state.clicked &&
           <div style={myInfo} id="example-collapse-text">
+            <span style={imgStyle}>{this.props.img}</span>
             <ul>
             <li>{this.props.brand}</li>
             <li>{this.props.price}</li>
             <li>{this.props.abv}</li>
             <br></br>
-            <h4>{this.props.remainder}</h4>
             <div><EditKeg/></div>
           </ul>
           </div>
-
-
         }
       </div>
     );
+
     Keg.propTypes = {
       name: PropTypes.string.isRequired,
       brand: PropTypes.string.isRequired,
       price: PropTypes.number.isRequired,
       abv: PropTypes.number.isRequired,
-      remainder: PropTypes.number.isRequired
+      img: PropTypes.string.isRequired
     }
   }
-
-
 }
