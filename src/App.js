@@ -4,6 +4,9 @@ import UserNav from './components/UserNav'
 import KegList from './components/KegList'
 import BeerBackground1 from './components/BeerBackgroundImg'
 import Sidebar from './components/Sidebar'
+import Keg from './components/Keg';
+
+
 
 
 class App extends React.Component {
@@ -34,8 +37,8 @@ class App extends React.Component {
 
       <div>
       <h2>Remainder: {this.state.remander}</h2>
-        <button onClick={this.increaseRemainder}>Add pint</button>
-        <button onClick={this.decreaseRemainder}>Sell pint</button>
+      <div><button onClick={this.increaseRemainder}>Add pint</button></div>
+      <div><button onClick={this.decreaseRemainder}>Sell pint</button></div>
         <meter low={5} value={this.state.remainder + ''} min='0' low='50' max='124'></meter>
       </div>
 
@@ -44,6 +47,7 @@ class App extends React.Component {
       <BeerBackground1/>
       <Sidebar/>
       <KegList remainder={this.state.remainder}/>
+      <Keg increaseRemainder={this.increaseRemainder} decreaseRemainder={this.decreaseRemainder}/>
     </div>
   );
 }

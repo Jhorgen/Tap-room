@@ -1,6 +1,8 @@
 import React from 'react';
 import Keg from './Keg';
 import Coors from './CoorsLogo';
+import PropTypes from "prop-types";
+
 
 var masterKegList = [
 
@@ -9,7 +11,6 @@ var masterKegList = [
     brand: 'Brand: Coors',
     price: 'Price: $5',
     abv: 'ABV: 5%',
-    remainder: 'Remainder: placeholder',
     img: <Coors/>
 
   },
@@ -19,7 +20,6 @@ var masterKegList = [
     brand: 'Coors',
     price: '5',
     abv: '5',
-    remainder: 'Remainder: placeholder'
   },
 
   {
@@ -27,7 +27,6 @@ var masterKegList = [
     brand: 'Coors',
     price: '5',
     abv: '5',
-    remainder: 'Remainder: placeholder'
   },
 
   {
@@ -35,7 +34,6 @@ var masterKegList = [
     brand: 'Coors',
     price: '5',
     abv: '5',
-    remainder: 'Remainder: placeholder'
   },
 
   {
@@ -43,7 +41,6 @@ var masterKegList = [
     brand: 'Coors',
     price: '5',
     abv: '5',
-    remainder: 'Remainder: placeholder'
   },
 
   {
@@ -51,13 +48,23 @@ var masterKegList = [
     brand: 'Coors',
     price: '5',
     abv: '5',
-    remainder: 'Remainder: placeholder'
   },
 ];
 
 
+class KegList extends React.Component {
 
-function KegList() {
+
+  static propTypes = {
+     remainder: PropTypes.number  ,
+  }
+
+  static defaultProps = {
+   remainder: 124
+}
+
+render() {
+
   return (
     <div>
       {masterKegList.map((kegs, index) =>
@@ -67,12 +74,12 @@ function KegList() {
           brand={kegs.brand}
           price={kegs.price}
           abv={kegs.abv}
-          remainder={kegs.remainder}
+          remainder={this.props.remainder}
           key={index}
           />
       )}
     </div>
   );
 }
-
+}
 export default KegList

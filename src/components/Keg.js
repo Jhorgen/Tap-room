@@ -67,6 +67,9 @@ export default class Keg extends Component {
             <li>{this.props.brand}</li>
             <li>{this.props.price}</li>
             <li>{this.props.abv}</li>
+            {this.props.remainder}
+            <button onClick={this.props.increaseRemainder}>Add pint</button>
+            <button onClick={this.props.decreaseRemainder}>Sell pint</button>
             <br></br>
             <div><EditKeg/></div>
           </ul>
@@ -76,6 +79,7 @@ export default class Keg extends Component {
     );
 
     Keg.propTypes = {
+      remainder: PropTypes.number.isRequired,
       name: PropTypes.string.isRequired,
       brand: PropTypes.string.isRequired,
       price: PropTypes.number.isRequired,
