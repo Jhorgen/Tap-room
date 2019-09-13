@@ -28,60 +28,64 @@ var buttonStyle = {
   width: '100px'
 }
 
-function NewKegForm(props){
+class NewKegForm extends React.Component {
+  constructor(props){
+    super(props);
+  this._name = null;
+  this._brand = null;
+  this._price = null;
+  this._abv = null;
+  this.handleNewKegFormSubmission = this.handleNewKegFormSubmission.bind(this);
+}
 
-  let _name = null;
-  let _brand = null;
-  let _price = null;
-  let _abv = null;
 
-  function handleNewKegFormSubmission(event) {
+  handleNewKegFormSubmission(event) {
     event.preventDefault();
     const profile_url = "https://www.m5hosting.com/wp-content/uploads/no-profile-img.gif";
 
-    props.onKegCreation({name: _name.value, brand: _brand.value, price: _price.value, abv: _abv.value, profile_url: profile_url, id: v4()});
-    _name.value = '';
-    _brand.value = '';
-    _price.value = '';
-    _abv.value = '';
+    this.props.onNewKegCreation({name: this._name.value, brand: this._brand.value, price: this._price.value, abv: this._abv.value, profile_url: profile_url, id: v4()});
+    this._name.value = '';
+    this._brand.value = '';
+    this._price.value = '';
+    this._abv.value = '';
   }
 
+render() {
   return (
       <div>
-        <form style={formStyle} onSubmit={handleNewKegFormSubmission}>
+        <form style={formStyle} onSubmit={this.handleNewKegFormSubmission}>
 
           <input style={inputStyle}
             type='text'
             id='name'
             placeholder='Name'
-            ref={(input) => {_name = input;}}/>
+            ref={(input) => {this._name = input;}}/>
 
           <input style={inputStyle}
               type='text'
               id='brand'
               placeholder='Brand'
-              ref={(input) => {_brand = input;}}/>
+              ref={(input) => {this._brand = input;}}/>
 
             <input style={inputStyle}
                 type='text'
                 id='price'
                 placeholder='Price'
-                ref={(input) => {_price = input;}}/>
+                ref={(input) => {this._price = input;}}/>
 
               <input style={inputStyle}
                   type='text'
                   id='abv'
                   placeholder='Abv'
-                  ref={(input) => {_abv = input;}}/>
+                  ref={(input) => {this._abv = input;}}/>
 
         <button type='submit' style={buttonStyle}>Submit</button>
         </form>
       </div>
     );
   }
-
-  NewKegForm.propTypes = {
-    onNewKegCreation: PropTypes.func
-  };
-
+}
+NewKegForm.propTypes = {
+  onNewKegCreation: PropTypes.func
+};
   export default NewKegForm;
