@@ -1,5 +1,6 @@
 import React from 'react';
 import './App.css';
+import { Image } from 'react-bootstrap';
 import UserNav from './components/UserNav'
 import KegList from './components/KegList'
 import PropTypes from 'prop-types';
@@ -7,7 +8,7 @@ import { BrowserRouter, Switch, Route, Link } from 'react-router-dom';
 import NewKegForm from './components/NewKegForm'
 import About from './components/About'
 import Contact from './components/Contact'
-
+import BackDrop from './components/Background'
 
 
 class App extends React.Component {
@@ -46,10 +47,11 @@ class App extends React.Component {
       <div>
         <Route exact path='/' render={()=><UserNav />} />
         <Route path='/newkeg' render={()=><NewKegForm onNewKegCreation={this.handleAddKegSubmission} />} />
-        <Route path='/keglist' render={()=><KegList/>} />
+        <Route path='/keglist' render={()=><KegList newKeg={this.newMasterKegList}/>} />
         <Route path='/about' render={()=><About/>} />
         <Route path='/contact' render={()=><Contact/>} />
       </div>
+      <BackDrop/>
       </BrowserRouter>
     </div>
   );

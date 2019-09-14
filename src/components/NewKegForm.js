@@ -1,6 +1,8 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { v4 } from 'uuid';
+import { Redirect } from 'react-router-dom';
+
 
 var formStyle = {
   display: 'flex',
@@ -31,10 +33,15 @@ var buttonStyle = {
 class NewKegForm extends React.Component {
   constructor(props){
     super(props);
+
   this._name = null;
   this._brand = null;
   this._price = null;
   this._abv = null;
+  this.state = {
+    redirectToHome: false
+
+  };
   this.handleNewKegFormSubmission = this.handleNewKegFormSubmission.bind(this);
 }
 
@@ -48,9 +55,13 @@ class NewKegForm extends React.Component {
     this._brand.value = '';
     this._price.value = '';
     this._abv.value = '';
+    this.setState({redirectToHome: true});
   }
 
 render() {
+  if (this.state.redirectToHome) {
+  return <Redirect to='/keglist' />;
+}
   return (
       <div>
         <form style={formStyle} onSubmit={this.handleNewKegFormSubmission}>
@@ -68,13 +79,13 @@ render() {
               ref={(input) => {this._brand = input;}}/>
 
             <input style={inputStyle}
-                type='text'
+                type='number'
                 id='price'
                 placeholder='Price'
                 ref={(input) => {this._price = input;}}/>
 
               <input style={inputStyle}
-                  type='text'
+                  type='number'
                   id='abv'
                   placeholder='Abv'
                   ref={(input) => {this._abv = input;}}/>

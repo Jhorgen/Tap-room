@@ -13,7 +13,7 @@ export default class Keg extends Component {
   constructor(props) {
     super(props)
     this.state = {
-      clicked: false
+      clicked: false,
     }
   }
 
@@ -23,7 +23,6 @@ export default class Keg extends Component {
       clicked: temp
     })
   }
-
 
   render() {
     return(
@@ -65,5 +64,5 @@ Keg.propTypes = {
   brand: PropTypes.string.isRequired,
   price: PropTypes.number.isRequired,
   abv: PropTypes.number.isRequired,
-  img: PropTypes.string.isRequired
+  img: PropTypes.string
 }
