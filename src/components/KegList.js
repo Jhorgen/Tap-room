@@ -2,49 +2,30 @@ import React from 'react';
 import Keg from './Keg';
 import Coors from './CoorsLogo';
 import PropTypes from "prop-types";
-import { BrowserRouter, Switch, Route, Link } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 
+let masterKegList = [];
 
-
-var masterKegList = [];
-
-
-class KegList extends React.Component {
-
-
-  static propTypes = {
-    remainder: PropTypes.number,
-  }
-
-  static defaultProps = {
-    remainder: 124
-  }
-
-  render() {
-
+function KegList(props) {
     return (
       <div>
-        <Link to='/newkeg'>Add New Keg</Link>
-        <Link to='/'>Go back</Link>
-
-
-        {masterKegList.map((kegs, index) =>
+        {props.masterKegList.map((keg, index) =>
           <Keg
-            img={kegs.img}
-            name={kegs.name}
-            brand={kegs.brand}
-            price={kegs.price}
-            abv={kegs.abv}
-            remainder={this.props.remainder}
+            name={keg.name}
+            brand={keg.brand}
+            price={keg.price}
+            abv={keg.abv}
+            remainder={keg.remainder}
             key={index}
             />
         )}
       </div>
     );
   }
-}
+
 KegList.propTypes = {
-  remainder: PropTypes.number.isRequired,
+  masterKegList: PropTypes.array,
+  remainder: PropTypes.number
 }
 
 export default KegList

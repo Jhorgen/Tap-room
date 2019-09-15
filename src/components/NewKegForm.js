@@ -33,7 +33,6 @@ var buttonStyle = {
 class NewKegForm extends React.Component {
   constructor(props){
     super(props);
-
   this._name = null;
   this._brand = null;
   this._price = null;

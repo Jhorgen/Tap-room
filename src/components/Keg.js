@@ -9,7 +9,7 @@ var imgStyle= {
 float: 'right'
 }
 
-export default class Keg extends Component {
+class Keg extends React.Component {
   constructor(props) {
     super(props)
     this.state = {
@@ -34,7 +34,6 @@ export default class Keg extends Component {
         </button>
         { this.state.clicked &&
           <div className='myInfo' id="example-collapse-text">
-            <span style={imgStyle}>{this.props.img}</span>
             <ul>
             <li>{this.props.brand}</li>
             <li>{this.props.price}</li>
@@ -58,10 +57,11 @@ export default class Keg extends Component {
   }
 }
 Keg.propTypes = {
-  remainder: PropTypes.number.isRequired,
   name: PropTypes.string.isRequired,
   brand: PropTypes.string.isRequired,
   price: PropTypes.number.isRequired,
   abv: PropTypes.number.isRequired,
-  img: PropTypes.string,
+  remainder: PropTypes.number
 }
+
+export default Keg;
