@@ -8,6 +8,8 @@ import NewKegForm from './components/NewKegForm'
 import About from './components/About'
 import Contact from './components/Contact'
 import BackDrop from './components/Background'
+import PropTypes from "prop-types";
+
 
 
 class App extends React.Component {
@@ -16,7 +18,6 @@ class App extends React.Component {
     super(props);
     this.state = {
       masterKegList: [],
-      remainder: 124
 
     }
   }
@@ -27,14 +28,6 @@ class App extends React.Component {
     newMasterKegList.push(newKeg);
     this.setState({masterKegList: newMasterKegList});
     console.log(newMasterKegList);
-  }
-
-  increaseRemainder = () => {
-    this.setState({remainder: this.state.remainder + 1});
-  }
-
-  decreaseRemainder = () => {
-    this.setState({remainder: this.state.remainder -1});
   }
 
   render() {
@@ -54,6 +47,10 @@ class App extends React.Component {
     </div>
   );
 }
+}
+
+App.propTypes = {
+  remainder: PropTypes.number
 }
 
 export default App;

@@ -14,6 +14,7 @@ class Keg extends React.Component {
     super(props)
     this.state = {
       clicked: false,
+      remainder: 124
     }
   }
 
@@ -22,6 +23,14 @@ class Keg extends React.Component {
     this.setState ({
       clicked: temp
     })
+  }
+
+  increaseRemainder = () => {
+    this.setState({remainder: this.state.remainder + 1});
+  }
+
+  decreaseRemainder = () => {
+    this.setState({remainder: this.state.remainder -1});
   }
 
   render() {
@@ -40,14 +49,16 @@ class Keg extends React.Component {
             <li>{this.props.abv}</li>
             <br></br>
             <br></br>
-            <div className='add-dec-keg'>
-            <button className='add-dec-keg' onClick={this.props.increaseRemainder}>Add pint</button>
-            <button className='add-dec-keg' onClick={this.props.decreaseRemainder}>Sell pint</button>
+
+          <div className='add-dec-keg'>
+            <button className='add-dec-keg' onClick={this.increaseRemainder}>Add pint</button>
+            <button className='add-dec-keg' onClick={this.decreaseRemainder}>Sell pint</button>
             </div>
-            <br></br>
+            <div className='remainder-value'>
             <meter low={5} value={this.state.remainder + ''} min='0' low='50' max='124'></meter>
+            <h4 className='remainder-value'>{this.state.remainder}</h4>
             <p className='keg-remainder'>{this.props.remainder}</p>
-            <br></br>
+            </div>
             <div className='edit-keg-button'><EditKeg/></div>
           </ul>
           </div>
@@ -61,7 +72,6 @@ Keg.propTypes = {
   brand: PropTypes.string.isRequired,
   price: PropTypes.number.isRequired,
   abv: PropTypes.number.isRequired,
-  remainder: PropTypes.number
 }
 
 export default Keg;
