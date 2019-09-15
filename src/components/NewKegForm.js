@@ -49,7 +49,6 @@ class NewKegForm extends React.Component {
   handleNewKegFormSubmission(event) {
     event.preventDefault();
     const profile_url = "https://www.m5hosting.com/wp-content/uploads/no-profile-img.gif";
-
     this.props.onNewKegCreation({name: this._name.value, brand: this._brand.value, price: this._price.value, abv: this._abv.value, profile_url: profile_url, id: v4()});
     this._name.value = '';
     this._brand.value = '';

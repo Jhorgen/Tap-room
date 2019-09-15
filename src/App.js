@@ -38,8 +38,6 @@ class App extends React.Component {
     this.setState({remainder: this.state.remainder -1});
   }
 
-
-
   render() {
   return (
     <div className="App">
@@ -50,6 +48,7 @@ class App extends React.Component {
         <Route path='/keglist' render={()=><KegList newKeg={this.newMasterKegList}/>} />
         <Route path='/about' render={()=><About/>} />
         <Route path='/contact' render={()=><Contact/>} />
+        <p>{this.newMasterKegList}</p>
       </div>
       <BackDrop/>
       </BrowserRouter>

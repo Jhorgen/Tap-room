@@ -55,7 +55,6 @@ export default class Keg extends Component {
         }
       </div>
     );
-
   }
 }
 Keg.propTypes = {
@@ -64,5 +63,5 @@ Keg.propTypes = {
   brand: PropTypes.string.isRequired,
   price: PropTypes.number.isRequired,
   abv: PropTypes.number.isRequired,
-  img: PropTypes.string
+  img: PropTypes.string,
 }

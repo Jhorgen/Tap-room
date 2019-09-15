@@ -6,52 +6,7 @@ import { BrowserRouter, Switch, Route, Link } from 'react-router-dom';
 
 
 
-var masterKegList = [
-
-  {
-    name: 'Coors Light',
-    brand: 'Brand: Coors',
-    price: 'Price: $5',
-    abv: 'ABV: 5%',
-    img: <Coors/>
-
-},
-
-{
-  name: 'Bud Light',
-  brand: 'Coors',
-  price: '5',
-  abv: '5',
-},
-
-{
-  name: 'Coors Light',
-  brand: 'Coors',
-  price: '5',
-  abv: '5',
-},
-
-{
-  name: 'Coors Light',
-  brand: 'Coors',
-  price: '5',
-  abv: '5',
-},
-
-{
-  name: 'Coors Light',
-  brand: 'Coors',
-  price: '5',
-  abv: '5',
-},
-
-{
-  name: 'Coors Light',
-  brand: 'Coors',
-  price: '5',
-  abv: '5',
-},
-];
+var masterKegList = [];
 
 
 class KegList extends React.Component {
@@ -89,7 +44,7 @@ class KegList extends React.Component {
   }
 }
 KegList.propTypes = {
-  remainder: PropTypes.number.isRequired
+  remainder: PropTypes.number.isRequired,
 }
 
 export default KegList
