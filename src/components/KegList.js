@@ -9,6 +9,10 @@ let masterKegList = [];
 function KegList(props) {
     return (
       <div>
+        <div className='keglist-buttons'>
+          <Link className='add-keg-link' to='newkeg'>Add keg</Link>
+          <Link className='add-keg-link' to='/'>Go back</Link>
+        </div>
         {props.masterKegList.map((keg, index) =>
           <Keg
             name={keg.name}

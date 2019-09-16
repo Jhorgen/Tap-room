@@ -4,6 +4,7 @@ import PropTypes from "prop-types";
 import Coors from './CoorsLogo';
 import EditKeg from './EditKegForm.js'
 import KegList from './KegList'
+import { Link } from 'react-router-dom';
 
 var imgStyle= {
 float: 'right'
@@ -44,9 +45,9 @@ class Keg extends React.Component {
         { this.state.clicked &&
           <div className='myInfo' id="example-collapse-text">
             <ul>
-            <li>{this.props.brand}</li>
-            <li>{this.props.price}</li>
-            <li>{this.props.abv}</li>
+            <li>Brand: {this.props.brand}</li>
+            <li>Price: ${this.props.price}.00</li>
+            <li>ABV: {this.props.abv}</li>
             <br></br>
             <br></br>
 
@@ -59,7 +60,9 @@ class Keg extends React.Component {
             <h4 className='remainder-value'>{this.state.remainder}</h4>
             <p className='keg-remainder'>{this.props.remainder}</p>
             </div>
-            <div className='edit-keg-button'><EditKeg/></div>
+            <Link className='add-keg-link' to='editkeg'>
+            <div className='edit-keg-button'>Edit Keg</div>
+            </Link>
           </ul>
           </div>
         }
