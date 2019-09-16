@@ -50,7 +50,6 @@ class App extends React.Component {
         <Route exact path='/contact' render={()=><Contact/>} />
         <p>{this.newMasterKegList}</p>
       </div>
-      <BackDrop/>
       </BrowserRouter>
     </div>
   );
