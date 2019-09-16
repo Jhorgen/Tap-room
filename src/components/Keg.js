@@ -44,12 +44,13 @@ class Keg extends React.Component {
         </button>
         { this.state.clicked &&
           <div className='myInfo' id="example-collapse-text">
+            <hr></hr>
             <ul>
             <li>Brand: {this.props.brand}</li>
             <li>Price: ${this.props.price}.00</li>
-            <li>ABV: {this.props.abv}</li>
+            <li>ABV: {this.props.abv}%</li>
             <br></br>
-            <br></br>
+            <hr></hr>
 
           <div className='add-dec-keg'>
             <button className='add-dec-keg' onClick={this.increaseRemainder}>Add pint</button>
@@ -60,6 +61,7 @@ class Keg extends React.Component {
             <h4 className='remainder-value'>{this.state.remainder}</h4>
             <p className='keg-remainder'>{this.props.remainder}</p>
             </div>
+          <hr></hr>
             <Link className='add-keg-link' to='editkeg'>
             <div className='edit-keg-button'>Edit Keg</div>
             </Link>

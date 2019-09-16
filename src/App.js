@@ -12,14 +12,16 @@ import PropTypes from "prop-types";
 import EditKegForm from './components/EditKegForm'
 
 
-
 class App extends React.Component {
 
   constructor(props) {
     super(props);
     this.state = {
-      masterKegList: [],
-
+      masterKegList: [
+        {name: 'Coors Light', brand: 'Coors', price: '5', abv: '5'},
+        {name: 'Lagunitas Imperial Stout', brand: 'Lagunitas Brewing Company', price: '7', abv: '9'},
+        {name: 'Ninkasi Tricerahops Double IPA', brand: 'Ninkasi', price: '5', abv: '7'}
+      ]
     }
   }
 
@@ -43,6 +45,7 @@ class App extends React.Component {
       <BrowserRouter>
       <div>
         <Route exact path='/' render={()=><UserNav />} />
+        <Route exact path='/' render={()=><BackDrop />} />
         <Route exact path='/newkeg' render={()=><NewKegForm onNewKegCreation={this.handleAddKegSubmission} />} />
         <Route exact path='/editkeg' render={()=><EditKegForm onKegEdit={this.handleEdit} />} />
         <Route exact path='/keglist' render={()=><KegList masterKegList={this.state.masterKegList}/>} />

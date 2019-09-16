@@ -7,11 +7,16 @@ import { BrowserRouter, Switch, Route, Link } from 'react-router-dom';
 function UserNav(){
 
   var myStyle = {
-    backgroundColor: "coral"
+    backgroundColor: "coral",
+    width: '98%',
+    marginLeft: 'auto',
+    marginRight: 'auto',
+    marginTop: '8px'
   }
 
 
   return (
+    <div>
     <Navbar style={myStyle} expand="lg">
       <Navbar.Brand href="#home"><SiteLogo/></Navbar.Brand>
       <Navbar.Collapse id="basic-navbar-nav">
@@ -25,7 +30,7 @@ function UserNav(){
         </Nav>
       </Navbar.Collapse>
     </Navbar>
-
+    </div>
   );
 }
 

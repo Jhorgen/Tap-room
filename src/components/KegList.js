@@ -4,8 +4,6 @@ import Coors from './CoorsLogo';
 import PropTypes from "prop-types";
 import { Link } from 'react-router-dom';
 
-let masterKegList = [];
-
 function KegList(props) {
     return (
       <div>
