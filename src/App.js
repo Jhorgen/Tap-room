@@ -33,8 +33,9 @@ class App extends React.Component {
     console.log(newMasterKegList);
   }
 
-  handleEdit = (Keg) => {
-    var newMasterKegList = this.state.masterKegList
+  handleEdit = (newKeg, kegIndex) => {
+    var newMasterKegList = this.state.masterKegList;
+    newMasterKegList[kegIndex] = newKeg;
     this.setState({masterKegList: newMasterKegList});
     console.log(newMasterKegList);
   }
@@ -47,7 +48,7 @@ class App extends React.Component {
         <Route exact path='/' render={()=><UserNav />} />
         <Route exact path='/' render={()=><BackDrop />} />
         <Route exact path='/newkeg' render={()=><NewKegForm onNewKegCreation={this.handleAddKegSubmission} />} />
-        <Route exact path='/editkeg' render={()=><EditKegForm onKegEdit={this.handleEdit} />} />
+        <Route exact path='/editkeg' render={(props)=><EditKegForm onKegEdit={this.handleEdit} kegIndex={props.location.kegIndex}/>} />
         <Route exact path='/keglist' render={()=><KegList masterKegList={this.state.masterKegList}/>} />
         <Route exact path='/about' render={()=><About/>} />
         <Route exact path='/contact' render={()=><Contact/>} />

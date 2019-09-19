@@ -62,7 +62,7 @@ class Keg extends React.Component {
             <p className='keg-remainder'>{this.props.remainder}</p>
             </div>
           <hr></hr>
-            <Link className='add-keg-link' to='editkeg'>
+            <Link className='add-keg-link' to={{pathname: 'editkeg', kegIndex: this.props.kegIndex}}>
             <div className='edit-keg-button'>Edit Keg</div>
             </Link>
           </ul>
@@ -77,6 +77,7 @@ Keg.propTypes = {
   brand: PropTypes.string.isRequired,
   price: PropTypes.number.isRequired,
   abv: PropTypes.number.isRequired,
+  kegIndex: PropTypes.number.isRequired,
 }
 
 export default Keg;

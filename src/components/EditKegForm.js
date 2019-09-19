@@ -47,7 +47,10 @@ class EditKegForm extends React.Component {
 
   handleEditKeg(event) {
     event.preventDefault();
-    this.props.onKegEdit({name: this._name.value, brand: this._brand.value, price: this._price.value, abv: this._abv.value, id: v4()});
+    this.props.onKegEdit(
+      {name: this._name.value, brand: this._brand.value, price: this._price.value, abv: this._abv.value, id: v4()},
+      this.props.kegIndex
+    );
     this._name.value = '';
     this._brand.value = '';
     this._price.value = '';
