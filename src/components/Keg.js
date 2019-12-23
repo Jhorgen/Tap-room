@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import PropTypes from "prop-types";
 import { Link } from 'react-router-dom';
-import { Row, Col } from 'reactstrap';
+import { Row, Col, Button } from 'reactstrap';
 
 
 class Keg extends Component {
@@ -33,8 +33,8 @@ class Keg extends Component {
   deleteKegCheck = () => {
     console.log("tobedeleted:", this.props.kegIndex);
     this.setState({deleteCheck: <div><p>Are you sure?</p>
-    <button onClick={() => this.deleteKegConfirm()}>Yes</button>
-    <button onClick={() => this.deleteKegDeny()}>No</button>
+    <Button onClick={() => this.deleteKegConfirm()}>Yes</Button>
+    <Button onClick={() => this.deleteKegDeny()}>No</Button>
     </div> })
   }
 
@@ -52,13 +52,13 @@ class Keg extends Component {
   render() {
     return(
       <div>
-        <button style={{display: this.state.kegExists}} className='myButton'
+        <Button style={{display: this.state.kegExists}} className='myButton'
           onClick={() => this.handleClick()}
           >
           {this.props.name}
-        </button>
+        </Button>
           <div>
-          <div>
+          <div className='d-flex justify-content-center'>
         { this.state.clicked &&
           <div style={{display: this.state.kegExists}} className='myInfo' id="example-collapse-text">
             <hr></hr>
@@ -70,8 +70,8 @@ class Keg extends Component {
             <hr></hr>
 
           <div className='add-dec-keg'>
-            <button className='add-dec-keg' onClick={this.increaseRemainder}>Add pint</button>
-            <button className='add-dec-keg' onClick={this.decreaseRemainder}>Sell pint</button>
+            <Button className='add-dec-keg' onClick={this.increaseRemainder}>Add pint</Button>
+            <Button className='add-dec-keg' onClick={this.decreaseRemainder}>Sell pint</Button>
             </div>
             <div className='remainder-value'>
             <meter low={5} value={this.state.remainder + ''} min='0' low='50' max='124'></meter>
@@ -81,9 +81,9 @@ class Keg extends Component {
           <hr></hr>
           <Row>
             <Link className='add-keg-link' to={{pathname: 'editkeg', kegIndex: this.props.kegIndex}}>
-            <div className='edit-keg-button'>Edit keg</div>
+            <div className='edit-keg-Button'>Edit keg</div>
             </Link>
-            <button onClick={() => this.deleteKegCheck()}>Delete keg</button>
+            <Button onClick={() => this.deleteKegCheck()}>Delete keg</Button>
             {this.state.deleteCheck}
             </Row>
           </ul>
