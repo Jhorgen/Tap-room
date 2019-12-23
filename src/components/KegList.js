@@ -1,6 +1,5 @@
 import React from 'react';
 import Keg from './Keg';
-import Coors from './CoorsLogo';
 import PropTypes from "prop-types";
 import UserNav from "./UserNav"
 import { Link } from 'react-router-dom';

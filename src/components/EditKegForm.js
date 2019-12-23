@@ -52,7 +52,7 @@ class EditKegForm extends React.Component {
       this.props.kegIndex
     );
     this._name.value = '';
-    this._brand.value = '';
+    this._brand.value = this.props.brand;
     this._price.value = '';
     this._abv.value = '';
     this.setState({redirectToHome: true});

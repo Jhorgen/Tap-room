@@ -1,21 +1,17 @@
-import React, {Component} from 'react';
-import { Button, Collapse } from 'react-bootstrap'
+import React, { Component } from 'react';
 import PropTypes from "prop-types";
-import Coors from './CoorsLogo';
-import EditKeg from './EditKegForm.js'
-import KegList from './KegList'
 import { Link } from 'react-router-dom';
+import { Row, Col } from 'reactstrap';
 
-var imgStyle= {
-float: 'right'
-}
 
-class Keg extends React.Component {
+class Keg extends Component {
   constructor(props) {
     super(props)
     this.state = {
       clicked: false,
-      remainder: 124
+      remainder: 124,
+      kegExists: '',
+      deleteCheck: ''
     }
   }
 
@@ -34,16 +30,37 @@ class Keg extends React.Component {
     this.setState({remainder: this.state.remainder -1});
   }
 
+  deleteKegCheck = () => {
+    console.log("tobedeleted:", this.props.kegIndex);
+    this.setState({deleteCheck: <div><p>Are you sure?</p>
+    <button onClick={() => this.deleteKegConfirm()}>Yes</button>
+    <button onClick={() => this.deleteKegDeny()}>No</button>
+    </div> })
+  }
+
+  deleteKegConfirm = () => {
+    this.setState({kegExists: 'none'});
+  }
+
+  deleteKegDeny = () => {
+    console.log('ran');
+    this.setState({deleteCheck: ''});
+  }
+
+
+
   render() {
     return(
       <div>
-        <button className='myButton'
+        <button style={{display: this.state.kegExists}} className='myButton'
           onClick={() => this.handleClick()}
           >
           {this.props.name}
         </button>
+          <div>
+          <div>
         { this.state.clicked &&
-          <div className='myInfo' id="example-collapse-text">
+          <div style={{display: this.state.kegExists}} className='myInfo' id="example-collapse-text">
             <hr></hr>
             <ul>
             <li>Brand: {this.props.brand}</li>
@@ -62,13 +79,19 @@ class Keg extends React.Component {
             <p className='keg-remainder'>{this.props.remainder}</p>
             </div>
           <hr></hr>
+          <Row>
             <Link className='add-keg-link' to={{pathname: 'editkeg', kegIndex: this.props.kegIndex}}>
-            <div className='edit-keg-button'>Edit Keg</div>
+            <div className='edit-keg-button'>Edit keg</div>
             </Link>
+            <button onClick={() => this.deleteKegCheck()}>Delete keg</button>
+            {this.state.deleteCheck}
+            </Row>
           </ul>
-          </div>
+        </div>
         }
       </div>
+  </div>
+    </div>
     );
   }
 }

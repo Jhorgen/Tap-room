@@ -1,9 +1,8 @@
 import React from 'react';
 import './App.css';
-import { Image } from 'react-bootstrap';
 import UserNav from './components/UserNav'
 import KegList from './components/KegList'
-import { BrowserRouter, Route, Link } from 'react-router-dom';
+import { BrowserRouter, Route } from 'react-router-dom';
 import NewKegForm from './components/NewKegForm'
 import About from './components/About'
 import Contact from './components/Contact'

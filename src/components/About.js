@@ -8,10 +8,7 @@ var myStyle = {
 }
 
 function About(){
-
-
   return (
-
 <div>
 <UserNav/>
 <h3>OUR MISSION <br></br><br></br>
