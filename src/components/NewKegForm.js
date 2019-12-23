@@ -3,7 +3,6 @@ import PropTypes from 'prop-types';
 import { v4 } from 'uuid';
 import { Redirect } from 'react-router-dom';
 
-
 var formStyle = {
   display: 'flex',
   flexDirection: 'column',

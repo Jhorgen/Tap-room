@@ -13,7 +13,6 @@ function UserNav(){
     marginTop: '8px'
   }
 
-
   return (
 
     <div style={myStyle}>

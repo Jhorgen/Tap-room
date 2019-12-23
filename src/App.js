@@ -1,12 +1,8 @@
 import React from 'react';
 import './App.css';
-import UserNav from './components/UserNav'
 import KegList from './components/KegList'
 import { BrowserRouter, Route } from 'react-router-dom';
 import NewKegForm from './components/NewKegForm'
-import About from './components/About'
-import Contact from './components/Contact'
-import BackDrop from './components/Background'
 import PropTypes from "prop-types";
 import EditKegForm from './components/EditKegForm'
 
@@ -44,13 +40,9 @@ class App extends React.Component {
     <div className="App">
       <BrowserRouter>
       <div>
-        <Route exact path='/' render={()=><UserNav />} />
-        <Route exact path='/' render={()=><BackDrop />} />
+        <Route exact path='/' render={()=><KegList masterKegList={this.state.masterKegList}/>} />
         <Route exact path='/newkeg' render={()=><NewKegForm onNewKegCreation={this.handleAddKegSubmission} />} />
         <Route exact path='/editkeg' render={(props)=><EditKegForm onKegEdit={this.handleEdit} kegIndex={props.location.kegIndex}/>} />
-        <Route exact path='/keglist' render={()=><KegList masterKegList={this.state.masterKegList}/>} />
-        <Route exact path='/about' render={()=><About/>} />
-        <Route exact path='/contact' render={()=><Contact/>} />
         <p>{this.newMasterKegList}</p>
       </div>
       </BrowserRouter>
