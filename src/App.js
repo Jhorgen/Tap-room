@@ -16,8 +16,19 @@ class App extends React.Component {
         {name: 'Coors Light', brand: 'Coors', price: '5', abv: '5'},
         {name: 'Lagunitas Imperial Stout', brand: 'Lagunitas Brewing Company', price: '7', abv: '9'},
         {name: 'Ninkasi Tricerahops Double IPA', brand: 'Ninkasi', price: '5', abv: '7'}
-      ]
+      ],
+      apiResponse: ''
     }
+  }
+
+  apiTest = () => {
+    fetch("http://localhost:9000/testAPI")
+    .then(res => res.text())
+    .then(res => this.setState({ apiResponse: res}));
+  }
+
+  componentWillMount = () => {
+    this.apiTest();
   }
 
   handleAddKegSubmission = (newKeg) => {
@@ -44,6 +55,7 @@ class App extends React.Component {
         <Route exact path='/newkeg' render={()=><NewKegForm onNewKegCreation={this.handleAddKegSubmission} />} />
         <Route exact path='/editkeg' render={(props)=><EditKegForm onKegEdit={this.handleEdit} kegIndex={props.location.kegIndex}/>} />
         <p>{this.newMasterKegList}</p>
+        <p>{this.state.apiResponse}</p>
       </div>
       </BrowserRouter>
     </div>
