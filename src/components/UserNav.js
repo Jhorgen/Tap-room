@@ -1,9 +1,9 @@
 import React from 'react';
 import SiteLogo from './NavLogo';
-import { BrowserRouter, Switch, Route, Link } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 
 
-function UserNav(){
+function UserNav() {
 
   var myStyle = {
     backgroundColor: "coral",
@@ -14,7 +14,6 @@ function UserNav(){
   }
 
   return (
-
     <div style={myStyle}>
       <Link to='/'>
       <SiteLogo/>
